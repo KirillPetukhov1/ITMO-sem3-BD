@@ -7,5 +7,8 @@ kTRk<8864
 
 psql -h pg -d studs
 
-psql -h pg -d studs -f create.sql
+psql -h pg -d studs -f .sql
+
+
+psql -h pg -d ucheb -f .sql
 ```
