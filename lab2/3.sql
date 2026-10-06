@@ -3,6 +3,10 @@
 При составлении запроса нельзя использовать DISTINCT.
 */
 
-SELECT COUNT(*)
-FROM Н_ДИСЦИПЛИНЫ
-GROUP BY НАИМЕНОВАНИЕ;
+SELECT COUNT(*) AS ЧИСЛО_НАЗВАНИЙ
+FROM (
+    SELECT НАИМЕНОВАНИЕ
+    FROM Н_ДИСЦИПЛИНЫ
+    WHERE НАИМЕНОВАНИЕ IS NOT NULL
+    GROUP BY НАИМЕНОВАНИЕ
+) AS названия;
